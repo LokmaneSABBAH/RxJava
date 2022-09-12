@@ -40,5 +40,10 @@ public class PostViewModel extends ViewModel {
         disposable.add(observable.subscribe(c->postsMutableLiveData.setValue(c), e-> Log.d(TAG, "getPosts: "+e)));
     }
 
-
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        disposable.clear();
+        //test
+    }
 }
